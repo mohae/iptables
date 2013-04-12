@@ -179,7 +179,7 @@ for my $module (@modules) {
 push( @data, suffix() );
 push( @data, snat() );
 
-if ( -f '/etc/debian_version' ) {
+if (( -f '/etc/debian_version' ) || ( -f '/etc/system-release' )) {
   install_debian(@data);
 } elsif ( -f '/etc/redhat-release' ) {
   install_redhat(@data);
